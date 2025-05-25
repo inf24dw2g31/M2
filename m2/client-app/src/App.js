@@ -32,6 +32,7 @@ function App() {
               <th>ID</th>
               <th>Nome</th>
               <th>Email</th>
+              <th>Senha</th>
               <th>Endereço</th>
               <th>Telefone</th>
               <th>Tipo</th>
@@ -43,6 +44,7 @@ function App() {
                 <td>{u.id}</td>
                 <td>{u.nome}</td>
                 <td>{u.email}</td>
+                <td>{u.senha}</td>
                 <td>{u.endereco}</td>
                 <td>{u.telefone}</td>
                 <td>{u.tipo_utilizador}</td>
@@ -57,6 +59,7 @@ function App() {
             <tr>
               <th>ID</th>
               <th>ID Utilizador</th>
+              <th>API Key</th>
             </tr>
           </thead>
           <tbody>
@@ -64,6 +67,7 @@ function App() {
               <tr key={a.id}>
                 <td>{a.id}</td>
                 <td>{a.id_utilizador}</td>
+                <td>{a.api_key}</td>
               </tr>
             ))}
           </tbody>
@@ -92,14 +96,21 @@ function App() {
           <thead>
             <tr>
               <th>ID</th>
+              <th>Nome</th>
+              <th>Descrição</th>
+              <th>Preço</th>
+              <th>Stock</th>
               <th>Categoria ID</th>
-              {/* Adicione outros campos conforme existirem na tabela */}
             </tr>
           </thead>
           <tbody>
             {produtos.map(p => (
               <tr key={p.id}>
                 <td>{p.id}</td>
+                <td>{p.nome}</td>
+                <td>{p.descricao}</td>
+                <td>{p.preco}</td>
+                <td>{p.stock}</td>
                 <td>{p.categoria_id}</td>
               </tr>
             ))}
@@ -112,7 +123,8 @@ function App() {
             <tr>
               <th>ID</th>
               <th>ID Utilizador</th>
-              {/* Adicione outros campos conforme existirem na tabela */}
+              <th>Data do Pedido</th>
+              <th>Estado Pagamento</th>
             </tr>
           </thead>
           <tbody>
@@ -120,6 +132,8 @@ function App() {
               <tr key={p.id}>
                 <td>{p.id}</td>
                 <td>{p.id_utilizador}</td>
+                <td>{p.data_pedido}</td>
+                <td>{p.estado_pagamento}</td>
               </tr>
             ))}
           </tbody>
@@ -131,7 +145,8 @@ function App() {
             <tr>
               <th>ID Pedido</th>
               <th>ID Produto</th>
-              {/* Adicione outros campos conforme existirem na tabela */}
+              <th>Quantidade</th>
+              <th>Preço Unitário</th>
             </tr>
           </thead>
           <tbody>
@@ -139,6 +154,8 @@ function App() {
               <tr key={`${i.id_pedido}-${i.id_produto}`}>
                 <td>{i.id_pedido}</td>
                 <td>{i.id_produto}</td>
+                <td>{i.quantidade}</td>
+                <td>{i.preco_unitario}</td>
               </tr>
             ))}
           </tbody>
@@ -150,7 +167,9 @@ function App() {
             <tr>
               <th>ID</th>
               <th>ID Pedido</th>
-              {/* Adicione outros campos conforme existirem na tabela */}
+              <th>Valor</th>
+              <th>Estado Pagamento</th>
+              <th>Método Pagamento</th>
             </tr>
           </thead>
           <tbody>
@@ -158,6 +177,9 @@ function App() {
               <tr key={pg.id}>
                 <td>{pg.id}</td>
                 <td>{pg.id_pedido}</td>
+                <td>{pg.valor}</td>
+                <td>{pg.estado_pagamento}</td>
+                <td>{pg.metodo_pagamento}</td>
               </tr>
             ))}
           </tbody>
